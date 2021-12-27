@@ -1,4 +1,4 @@
-# GTA-ONLINE-PVP-Macro
+# GTA-ONLINE-Macro
 Little Project for my free time
 
 I Make This script because my friend told me to make him a script
