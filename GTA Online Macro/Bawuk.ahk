@@ -4,7 +4,7 @@
 
 SetWorkingDir %A_ScriptDir%
 #NoEnv
-;#IfWinActive ahk_class grcWindow
+#IfWinActive ahk_class grcWindow
 
 ;==================================================
 ; Delay
