@@ -7,25 +7,29 @@ SetWorkingDir %A_ScriptDir%
 #IfWinActive ahk_class grcWindow
 
 ;==================================================
-; Delay
+; Delay (Change Delay in config.ini file)
 IniRead, IntMenuDelay, config.ini, Delay, IntMenuDelay
 IniRead, KeyPressDelay, config.ini, Delay, KeyPressDelay
 IniRead, PhoneDelay, config.ini, Delay, PhoneDelay
 IniRead, AntiAFKLoopDelay, config.ini, Delay, AntiAFKLoopDelay
 IniRead, AmmoMenuWaitTime, config.ini, Delay, AmmoMenuWaitTime
 ;======================================================
-; KeyBind
+; config.ini File read
 IniRead, ToggleVIPMode, config.ini, KeyBind, ToggleVIPMode
 IniRead, BuyBST, config.ini, KeyBind, BuyBST
 IniRead, EnableGO, config.ini, KeyBind, EnableGO
-IniRead, AntiAFK, config.ini, KeyBind, AntiAFK
 IniRead, OpenAmmoMenu, config.ini, KeyBind, OpenAmmoMenu
+IniRead, EnableBribeAuthorities, config.ini, KeyBind, EnableBribeAuthorities
+;IniRead, CallMMI, config.ini, KeyBind, CallMMI
 
+;===========================================================
+; KeyBind Setting (Change Keybind in config.ini file)
 Hotkey, %ToggleVIPMode%, ToggleVIPMode
 Hotkey, %BuyBST%, BuyBST
 Hotkey, %EnableGO%, EnableGO
-Hotkey, %AntiAFK%, AntiAFK
 Hotkey, %OpenAmmoMenu%, OpenAmmoMenu
+Hotkey, %EnableBribeAuthorities%, EnableBribeAuthorities
+;Hotkey, %CallMMI%, CallMMI
 
 ;==================================================
 ;Toggle VIP Mode (Needed for Interaction Menu)
@@ -61,11 +65,10 @@ Toggle:
 ;========================================
 ;Buy BullShark Testosterone
 BuyBST:
-{
     SetCapsLockState off
     Send {m} 
     Sleep %IntMenuDelay%
-    Sen {Enter} 
+    Send {Enter} 
     Sleep %IntMenuDelay%
     Send {Up 3} 
     Sleep %IntMenuDelay%
@@ -74,14 +77,13 @@ BuyBST:
     Send {Down} 
     Sleep %IntMenuDelay%
     Send {Enter} 
-}
+
 Return
 ;=======================================
 
 ;=======================================
 ;Enable Ghost Organization
 EnableGO:
-{
     SetCapsLockState off
     Send {m}
     Sleep %IntMenuDelay%
@@ -94,27 +96,11 @@ EnableGO:
     Send {Up 3}
     Sleep %IntMenuDelay%
     Send {Enter}
-}
 Return
 ;=======================================
 
-;=======================================
-;AFK (Ok it's working... kinda)
-#MaxThreadsPerHotkey 2
-AntiAFK:
-{
-  Toggle := !Toggle
-  Loop
-  {
-    If not Toggle
-        Break
-        Send {w}
-        Sleep %AntiAFKLoopDelay%
-  }
-}  
+
 ;=================================================
-
-
 ;Open Buy Ammo Menu
 OpenAmmoMenu:
 if (VIPModeActivated)
@@ -142,3 +128,23 @@ else
     Send {Enter}
 }
 return
+;=========================================================
+
+;=========================================================
+; Enable Bribe Authorities
+EnableBribeAuthorities:
+  SetCapsLockState off
+    Send {m} 
+    Sleep %IntMenuDelay%
+    Send {Enter} 
+    Sleep %IntMenuDelay%
+    Send {Up 3} 
+    Sleep %IntMenuDelay%
+    Send {Enter} 
+    Sleep %IntMenuDelay%
+    Send {Up 2}
+    Sleep %IntMenuDelay%
+    Send {Enter}
+Return
+;=================================================
+
