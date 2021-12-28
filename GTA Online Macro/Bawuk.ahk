@@ -77,7 +77,6 @@ BuyBST:
     Send {Down} 
     Sleep %IntMenuDelay%
     Send {Enter} 
-
 Return
 ;=======================================
 
