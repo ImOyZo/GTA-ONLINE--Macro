@@ -4,7 +4,7 @@
 
 SetWorkingDir %A_ScriptDir%
 #NoEnv
-#IfWinActive ahk_class grcWindow
+;#IfWinActive ahk_class grcWindow
 
 ;==================================================
 ; Delay
@@ -40,10 +40,7 @@ Toggle:
         VIPModeActivated := false
         SplashTextOn 280, 20, VIP mode, VIP mode has been DEACTIVATED
       } 
-      else 
-      {
 
-      }
     } 
     else 
     {
@@ -105,6 +102,7 @@ Return
 ;AFK (Ok it's working... kinda)
 #MaxThreadsPerHotkey 2
 AntiAFK:
+{
   Toggle := !Toggle
   Loop
   {
@@ -113,6 +111,7 @@ AntiAFK:
         SendInput {w}
         Sleep %AntiAFKLoopDelay%
   }
+}  
 ;=================================================
 
 
