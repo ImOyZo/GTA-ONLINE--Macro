@@ -108,7 +108,7 @@ AntiAFK:
   {
     If not Toggle
         Break
-        SendInput {w}
+        Send {w}
         Sleep %AntiAFKLoopDelay%
   }
 }  
