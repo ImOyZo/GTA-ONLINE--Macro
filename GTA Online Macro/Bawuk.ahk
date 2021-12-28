@@ -63,17 +63,17 @@ Toggle:
 BuyBST:
 {
     SetCapsLockState off
-    SendInput {m} 
+    Send {m} 
     Sleep %IntMenuDelay%
-    SendInput {Enter} 
+    Sen {Enter} 
     Sleep %IntMenuDelay%
-    SendInput {Up 3} 
+    Send {Up 3} 
     Sleep %IntMenuDelay%
-    SendInput {Enter} 
+    Send {Enter} 
     Sleep %IntMenuDelay%
-    SendInput {Down} 
+    Send {Down} 
     Sleep %IntMenuDelay%
-    SendInput {Enter} 
+    Send {Enter} 
 }
 Return
 ;=======================================
@@ -83,17 +83,17 @@ Return
 EnableGO:
 {
     SetCapsLockState off
-    SendInput {m}
+    Send {m}
     Sleep %IntMenuDelay%
-    SendInput {Enter}
+    Send {Enter}
     Sleep %IntMenuDelay%
-    SendInput {Up 3}
+    Send {Up 3}
     Sleep %IntMenuDelay%
-    SendInput {Enter}
+    Send {Enter}
     Sleep %IntMenuDelay%
-    SendInput {Up 3}
+    Send {Up 3}
     Sleep %IntMenuDelay%
-    SendInput {Enter}
+    Send {Enter}
 }
 Return
 ;=======================================
@@ -119,26 +119,26 @@ AntiAFK:
 OpenAmmoMenu:
 if (VIPModeActivated)
 {
-    SendInput {m}
+    Send {m}
     Sleep %IntMenuDelay%
-    SendInput {Down 3}
+    Send {Down 3}
     Sleep %IntMenuDelay%
-    SendInput {Enter}
+    Send {Enter}
     Sleep %AmmoMenuWaitTime%
-    SendInput {Down 5}
+    Send {Down 5}
     Sleep %IntMenuDelay% 
-    SendInput {Enter}
+    Send {Enter}
 }
 else
 {
-    SendInput {m}
+    Send {m}
     Sleep %IntMenuDelay%
-    SendInput {Down 2}
+    Send {Down 2}
     Sleep %IntMenuDelay%
-    SendInput {Enter}
+    Send {Enter}
     Sleep  %AmmoMenuWaitTime%
-    SendInput {Down 5}
+    Send {Down 5}
     Sleep %IntMenuDelay%
-    SendInput {Enter}
+    Send {Enter}
 }
 return
