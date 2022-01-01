@@ -3,8 +3,9 @@
 ; ================================
 
 SetWorkingDir %A_ScriptDir%
+#SingleInstance Force
 #NoEnv
-#IfWinActive ahk_class grcWindow
+#IfWinActive Grand Theft Auto V
 
 ;==================================================
 ; Delay (Change Delay in config.ini file)
@@ -29,7 +30,6 @@ Hotkey, %BuyBST%, BuyBST
 Hotkey, %EnableGO%, EnableGO
 Hotkey, %OpenAmmoMenu%, OpenAmmoMenu
 Hotkey, %EnableBribeAuthorities%, EnableBribeAuthorities
-;Hotkey, %CallMMI%, CallMMI
 
 ;==================================================
 ;Toggle VIP Mode (Needed for Interaction Menu)
@@ -95,6 +95,7 @@ EnableGO:
     Send {Up 3}
     Sleep %IntMenuDelay%
     Send {Enter}
+
 Return
 ;=======================================
 
@@ -146,4 +147,3 @@ EnableBribeAuthorities:
     Send {Enter}
 Return
 ;=================================================
-
